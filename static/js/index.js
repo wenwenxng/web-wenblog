@@ -4,9 +4,18 @@
 $(function () {
     /*轮播图*/
     banner();
+    navBars();
     iniMobileTab();
-    /*初始化*/
+    /*初始化金,粤提示*/
     $('[data-toggle="tooltip"]').tooltip();
+    //解决
+    //注册防止fix引起window滑动事件
+    $('.wwx_nav').on('touchmove', function(event) {
+        event.preventDefault();
+    });
+    $(window).on('scroll',function(){
+        $('.wwx_nav .navbar-collapse').removeClass('in');
+    })
 });
 var banner = function(){
     /*1.获取轮播图数据   ajax*/
@@ -26,7 +35,7 @@ var banner = function(){
         }else{
             $.ajax({
                 type:'get',
-                url:'/static/js/data.json',
+                url:'/api/banner/queryBanner.php',
                 dataType:'json',/*强制转成json对象,不成功则报错,不会执行success,执行error回调*/
                 data:"",
                 success:function(data) {
@@ -38,8 +47,9 @@ var banner = function(){
     };
    var render = function(){
                /*2.根据数据动态渲染   根据当前设备   屏幕宽度判断*/
+       var deviceWidth = $(window).width()
        getData(function(data){
-           var isMobile = $(window).width() < 768 ? true:false;
+           var isMobile = deviceWidth < 768 ? true:false;
            /*2.1准备数据*/
            /*2.2把数据转换成html格式的字符串(动态创建元素,字符串拼接,模板引擎[artTemplate,])*/
            /*使用模板引擎:哪些html内容需要动态的*/
@@ -53,8 +63,23 @@ var banner = function(){
            $('.carousel-indicators').html(pointHtml);
            $('.carousel-inner').html(imageHtml);
        });
+
+       if (deviceWidth < 992){
+           $('#logo').attr('src','/static/images/smallLogo.png')
+       }else{
+           //上线后删除,解决logo在resize的问题
+           $('#logo').attr('src','/static/images/bigLogo.png')
+       }
+
+       if (deviceWidth < 768) {
+           $('.navbar-right .user a').attr('class','')
+       }else{
+           //上线后删除,解决样式在resize的问题
+           $('.navbar-right .login a').attr('class','btn btn-default btn-primary')
+           $('.navbar-right .register a').attr('class','btn btn-default btn-danger')
+       }
    };
-    /*render();*/
+    // render();
     /*3.测试功能,上线后删除*/
     $(window).on('resize',function(){
         render();
@@ -95,6 +120,47 @@ innerWidth();c+p
 outerWidth();c+p+b
 outerWidth(true)c+p+b+m
 */
+var navBars = function(){
+    var getTypeData = function(callback){
+            $.ajax({
+                type:'get',
+                url:'/api/category/queryType.php',
+                dataType:'json',/*强制转成json对象,不成功则报错,不会执行success,执行error回调*/
+                data:"",
+                success:function(data) {
+                    callback && callback(data);
+                }
+            });
+    };
+    var getArtByType = function(callback){
+        $.ajax({
+            type:'get',
+            url:'/api/article/queryArticle.php',
+            dataType:'json',/*强制转成json对象,不成功则报错,不会执行success,执行error回调*/
+            data:{
+                art_view:1,
+                page:1,
+                pageSize:6
+            },
+            success:function(data) {
+                callback && callback(data);
+            }
+        });
+    };
+    var render = function(){
+        getTypeData(function(data){
+            console.log(data)
+            var navBarsHtml = template('navTabsTemplate',{list:data});
+            $('.wwx_product .nav-tabs').html(navBarsHtml);
+
+        })
+        getArtByType(function(data){
+            console.log(data)
+        })
+    };
+    render()
+
+}
 var iniMobileTab = function(){
     /*1.解决换行问题*/
     var $navTabs = $('.wwx_product .nav-tabs');

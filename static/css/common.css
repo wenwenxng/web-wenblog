@@ -1,0 +1,311 @@
+/*======reset css======*/
+body {
+    padding-top: 80px;
+    font-size: 14px;
+    font-family: "Microsoft YaHei", sans-serif;
+    color: #333;
+    position: relative;
+    background-color: #f5f5f5;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #333;
+}
+h1,h2,h3,h4,h5,h6,ul,ol{
+    padding: 0;
+    margin: 0;
+}
+ul,ol{
+    list-style: none;
+}
+/*自定义字体图标*/
+@font-face {
+    font-family: 'wwx';
+    /*约束某一段字符代表什么图案*/
+    src: url(../fonts/MiFie-Web-Font.svg) format('svg'),
+    url(../fonts/MiFie-Web-Font.eot) format('embedded-opentype'),
+    url(../fonts/MiFie-Web-Font.ttf) format('truetype'),
+    url(../fonts/MiFie-Web-Font.woff) format('woff');
+}
+
+/*4.怎么使用维护性更好*/
+.wwx_icon {
+    font-family: "wwx";
+}
+
+/**/
+.wwx_icon_phone::before {
+    content: "\e908"
+}
+
+.wwx_icon_tel::before {
+    content: "\e909"
+}
+
+.wwx_icon_logo::before {
+    content: "\e920"
+}
+
+.wwx_icon_name::before {
+    content: "\e93e"
+}
+
+.wwx_icon_dollar::before {
+    content: '\e903'
+}
+
+.wwx_icon_clock::before {
+    content: '\e906'
+}
+
+.wwx_icon_video::before {
+    content: '\e905'
+}
+.wwx_icon_news_01::before {
+    content: "\e90e";
+}
+
+.wwx_icon_news_02::before {
+    content: "\e90f";
+}
+
+.wwx_icon_news_03::before {
+    content: "\e910";
+}
+
+.wwx_icon_news_04::before {
+    content: "\e911";
+}
+
+.wwx_icon_partner01::before {
+    content: "\e946";
+}
+
+.wwx_icon_partner02::before {
+    content: "\e92f";
+}
+
+.wwx_icon_partner03::before {
+    content: "\e92e";
+}
+
+.wwx_icon_partner04::before {
+    content: "\e92a";
+}
+
+.wwx_icon_partner05::before {
+    content: "\e929";
+}
+
+.wwx_icon_partner06::before {
+    content: "\e931";
+}
+
+.wwx_icon_partner07::before {
+    content: "\e92c";
+}
+
+.wwx_icon_partner08::before {
+    content: "\e92b";
+}
+
+.wwx_icon_partner09::before {
+    content: "\e92d";
+}
+/*=======model css==========*/
+/*公共的头*/
+
+
+/*把bootstrap源码拷过来*/
+/*1.能准确覆盖到所有元素的选择器并且能够保证后来者居上,即优先级高*/
+/*2.针对功能进行覆盖: 更改模块名称*/
+/*3.但是有一些没有用到的选择器 代码的冗余*/
+/*4.删除:降低代码量*/
+/*5.保留:利于维护,方便产品更新的时候不用再去修改代码*/
+.wwx_nav {
+    margin-bottom: 0;
+    border: none;
+    background: #fff;
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+    border-radius: 0;
+    z-index: 99999;
+    position: absolute;
+    /*不知道为什么不设置这个会有回不去的问题*/
+    top:-1px;
+    left:0;
+}
+.wwx_nav.affix{
+    position: fixed;
+    top:0;
+    left:0;
+}
+/*前面这个变大后,默认只会按第一个居中 其他跟他基线对齐*/
+/*如果只有一个加,加了那个中线对其其他元素的基线*/
+.wwx_nav .wwx_icon_logo {
+    font-size: 50px;
+    color: #e92322;
+    vertical-align: middle;
+}
+
+.wwx_nav .wwx_icon_name {
+    font-size: 36px;
+    color: #333;
+    vertical-align: middle;
+}
+
+.wwx_nav .navbar-brand {
+    color: #777;
+    height: 80px;
+    line-height: 50px;
+}
+.wwx_nav .navbar-brand img{
+    display: inline-block;
+    vertical-align: middle;
+}
+.wwx_nav .navbar-brand:hover,
+.wwx_nav .navbar-brand:focus {
+    color: #5e5e5e;
+    background-color: transparent;
+}
+
+.wwx_nav .navbar-text {
+    color: #777;
+}
+
+.wwx_nav .navbar-nav > li > a {
+    color: #777;
+    height: 80px;
+    line-height: 50px;
+    font-size: 16px;
+}
+
+@media (min-width: 768px){
+    .wwx_nav .navbar-nav >li.user>a{
+        height: 30px;
+        line-height: 30px;
+        color:#fff;
+        font-weight: bold;
+        padding: 0;
+        width: 50px;
+    }
+    .wwx_nav .navbar-nav >li.user{
+        height: 80px;
+        display: flex;
+        padding-left: 5px;
+        align-items:center;
+    }
+    .wwx_nav .navbar-nav > li.user > a {
+        font-size: 12px;
+    }
+}
+@media (max-width: 768px) {
+    .wwx_nav .navbar-nav > li > a {
+        color: #777;
+        height: 50px;
+        line-height: 20px;
+    }
+}
+.wwx_nav .navbar-nav > li > a:hover,
+.wwx_nav .navbar-nav > li > a:focus {
+    color: #777;
+    background-color: transparent;
+    border-bottom: 3px solid #e92322;
+}
+
+.wwx_nav .navbar-nav > .active > a,
+.wwx_nav .navbar-nav > .active > a:hover,
+.wwx_nav .navbar-nav > .active > a:focus {
+    color: #555;
+    border-bottom: 3px solid #e92322;
+}
+
+.wwx_nav .navbar-nav > .disabled > a,
+.wwx_nav .navbar-nav > .disabled > a:hover,
+.wwx_nav .navbar-nav > .disabled > a:focus {
+    color: #ccc;
+    background-color: transparent;
+}
+
+.wwx_nav .navbar-toggle {
+    border-color: #ddd;
+    margin-top: 23px;
+}
+
+.wwx_nav .navbar-toggle:hover,
+.wwx_nav .navbar-toggle:focus {
+    background-color: #ddd;
+}
+
+.wwx_nav .navbar-toggle .icon-bar {
+    background-color: #888;
+}
+
+.wwx_nav .navbar-collapse,
+.wwx_nav .navbar-form {
+    border-color: #e7e7e7;
+}
+
+.wwx_nav .navbar-nav > .open > a,
+.wwx_nav .navbar-nav > .open > a:hover,
+.wwx_nav .navbar-nav > .open > a:focus {
+    color: #555;
+    background-color: #e7e7e7;
+}
+
+@media (max-width: 767px) {
+    .wwx_nav .navbar-nav .open .dropdown-menu > li > a {
+        color: #777;
+    }
+
+    .wwx_nav .navbar-nav .open .dropdown-menu > li > a:hover,
+    .wwx_nav .navbar-nav .open .dropdown-menu > li > a:focus {
+        color: #333;
+        background-color: transparent;
+    }
+
+    .wwx_nav .navbar-nav .open .dropdown-menu > .active > a,
+    .wwx_nav .navbar-nav .open .dropdown-menu > .active > a:hover,
+    .wwx_nav .navbar-nav .open .dropdown-menu > .active > a:focus {
+        color: #555;
+        background-color: #e7e7e7;
+    }
+
+    .wwx_nav .navbar-nav .open .dropdown-menu > .disabled > a,
+    .wwx_nav .navbar-nav .open .dropdown-menu > .disabled > a:hover,
+    .wwx_nav .navbar-nav .open .dropdown-menu > .disabled > a:focus {
+        color: #ccc;
+        background-color: transparent;
+    }
+}
+
+.wwx_nav .navbar-link {
+    color: #777;
+}
+
+.wwx_nav .navbar-link:hover {
+    color: #333;
+}
+
+.wwx_nav .btn-link {
+    color: #777;
+}
+
+.wwx_nav .btn-link:hover,
+.wwx_nav .btn-link:focus {
+    color: #333;
+}
+
+.wwx_nav .btn-link[disabled]:hover,
+fieldset[disabled] .wwx_nav .btn-link:hover,
+.wwx_nav .btn-link[disabled]:focus,
+fieldset[disabled] .wwx_nav .btn-link:focus {
+    color: #ccc;
+}
+
