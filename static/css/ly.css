@@ -1,0 +1,178 @@
+.wwx_article{
+    margin-top: 15px;
+}
+.wwx_article .container{
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.wwx_article .art_footer{
+    padding: 20px 20px 0;
+}
+.wwx_article .art_footer .comment_textarea{
+    resize:none;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    height: 150px;
+}
+.wwx_article .art_footer>div>.alert{
+    padding: 6px;
+    margin-right: 10px;
+    display: none;
+    margin-bottom: 0;
+}
+.wwx_article .comment_box h4{
+    margin: 10px 0;
+}
+.wwx_article .comment_box .excerpt{
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+}
+.wwx_article .comment_box .excerpt:hover{
+    background-color: #fafff8;
+}
+.wwx_article .comment_box .excerpt .focus{
+    float: left;
+    margin-right: 20px;
+
+}
+.wwx_article .comment_box .excerpt .focus a{
+    border-radius: 50%;
+    overflow: hidden;
+}
+.wwx_article .comment_box .excerpt .focus img{
+    height: 40px;
+}
+.wwx_article .comment_box .excerpt .header{
+    margin: 5px 0;
+}
+.wwx_article .comment_box .excerpt .header h2{
+    font-size: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+@media (max-width: 767px) {
+    .wwx_article .comment_box .excerpt .header h2{
+        padding-right: 70px;
+    }
+}
+
+.wwx_article .comment_box .excerpt .header a{
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+    color:#555;
+    transition: all 0.3s ease;
+}
+.wwx_article .comment_box .excerpt .header:hover a{
+    color:#e92322;
+}
+.wwx_article .comment_box .excerpt .note{
+    font-size: 14px;
+    min-height: 50px;
+    color:#888;
+    line-height: 23.333px;
+    overflow: hidden;
+}
+.wwx_article .comment_box .excerpt .interact{
+    position: absolute;
+    right:0;
+    top:20px;
+}
+.wwx_article .comment_box .excerpt .interact .muted{
+    font-size: 14px;
+    color:#aaa;
+    margin-right: 15px;
+    cursor: pointer;
+}
+@media (max-width: 767px) {
+    .wwx_article .comment_box .excerpt .interact{
+        top:15px;
+    }
+    .wwx_article .comment_box .excerpt .interact .muted{
+        margin-right: 3px;
+    }
+}
+
+
+
+.wwx_article .multi_comment{
+    padding-left: 30px;
+}
+.wwx_article .multi_comment .multi_excerpt{
+    position: relative;
+}
+.wwx_article .multi_comment .multi_excerpt:hover{
+    background-color: #e9eee7;
+}
+.wwx_article .multi_comment .multi_excerpt .multi_focus{
+    float: left;
+    margin-right: 20px;
+
+}
+.wwx_article .multi_comment .multi_excerpt .multi_focus a{
+    border-radius: 50%;
+    overflow: hidden;
+}
+.wwx_article .multi_comment .multi_excerpt .multi_focus img{
+    height: 20px;
+}
+.wwx_article .multi_comment .multi_excerpt .multi_header{
+    margin: 5px 0;
+}
+.wwx_article .multi_comment .multi_excerpt .multi_header h2{
+    font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+@media (max-width: 767px) {
+    .wwx_article .multi_comment .multi_excerpt .multi_header h2{
+        padding-right: 70px;
+    }
+}
+.wwx_article .multi_comment .multi_excerpt .multi_header a{
+    font-size: 14px;
+    font-weight: bold;
+    text-align: left;
+    color:#555;
+    transition: all 0.3s ease;
+}
+.wwx_article .multi_comment .multi_excerpt .multi_header:hover a{
+    color:#e92322;
+}
+.wwx_article .multi_comment .multi_excerpt .multi_note{
+    font-size: 12px;
+    color:#888;
+    line-height: 23.333px;
+    overflow: hidden;
+}
+.wwx_article .multi_comment .multi_excerpt .multi_interact{
+    position: absolute;
+    right:-10px;
+    top:10px;
+}
+.wwx_article .multi_comment .multi_excerpt .multi_interact .muted{
+    font-size: 14px;
+    color:#aaa;
+    margin-right: 15px;
+    cursor: pointer;
+}
+@media (max-width: 767px) {
+    .wwx_article .multi_comment .multi_excerpt .multi_interact{
+        top: 5px;
+    }
+    .wwx_article .multi_comment .multi_excerpt .multi_interact .muted{
+        margin-right: 3px;
+    }
+}
+.wwx_article .multi_comment .btn{
+    margin-top: 5px;
+}
+.wwx_article footer .more{
+    padding: 15px 0;
+    text-align: center;
+}

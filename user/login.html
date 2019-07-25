@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+    <link rel="shortcut icon" type="image/ico" href="/favicon.ico"/>
+    <meta name="shot">
+    <title>温星博客-登录</title>
+    <link href="/static/lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="/static/lib/html5shiv/html5shiv.min.js"></script>
+    <script src="/static/lib/respond/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="/static/lib/bootstrap-validator/css/bootstrapValidator.min.css">
+    <!--进度条插件-->
+    <link rel="stylesheet" href="/static/lib/nprogress/nprogress.css">
+    <link rel="stylesheet" href="/static/css/login.css">
+</head>
+<body>
+<div class="wwx_login">
+    <div class="container">
+            <div class="content">
+                <header class="wwx_top">
+                    <a href="/">首页</a>
+                    <div class="logo">
+                        <img src="/static/images/smalllogo.png" alt="">
+                    </div>
+                    <a href="/user/register.html">注册</a>
+                </header>
+                <section class="wwx_main">
+                    <form id="login" action="javascript:;" >
+                        <div class="main_row form-group input_text">
+                            <input type="text" name="user_email" placeholder="邮箱">
+                        </div>
+                        <div  class="main_row form-group input_text">
+                            <input type="password" name="password" placeholder="密码">
+                        </div>
+                        <div  class="main_row">
+                            <input type="submit" class="btn btn-primary" value="确认登录" id="btn">
+                        </div>
+                        <div  class="main_row remember_row">
+                            <div class="remember">
+                                <div>
+                                    <label>
+                                        <input type="checkbox">记住我
+                                    </label>
+                                </div>
+                                <a href="javascript:;">忘记密码?</a>
+                            </div>
+                        </div>
+                    </form>
+                </section>
+                <footer class="wwx_foot">
+                    <p>
+                        <button></button>
+                    </p>
+                </footer>
+            </div>
+    </div>
+
+</div>
+<footer class="wwx_partner">
+    <ul>
+        <li><a href="">Copyright © 2019, wenwenxing All Rights Reserved.</a> </li>
+    </ul>
+</footer>
+
+
+<canvas id="cas" style="position : absolute;z-index : -1;left:0;top:0;"></canvas>
+<script src="/static/lib/jquery/jquery.min.js"></script>
+<script src="/static/lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="/static/lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
+<!--进度条的js-->
+<script src="/static/lib/nprogress/nprogress.js"></script>
+<script src="/static/js/common.js"></script>
+<script src="/static/js/user.js"></script>
+</body>
+</html>

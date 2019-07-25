@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+    <link rel="shortcut icon" type="image/ico" href="/favicon.ico"/>
+    <meta name="shot">
+    <title>温星博客-留言</title>
+    <link href="/static/lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="/static/lib/html5shiv/html5shiv.min.js"></script>
+    <script src="/static/lib/respond/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="/static/lib/nprogress/nprogress.css">
+    <link rel="stylesheet" href="/static/css/common.css">
+    <link rel="stylesheet" href="/static/css/ly.css">
+</head>
+<body id="bd">
+<!--导航栏-->
+<nav class="navbar wwx_nav" data-spy="affix" data-offset-top="201">
+    <!--导航的内容容器-->
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">
+                <img src="/static/images/bigLogo.png" alt="" id="logo">
+            </a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="/">主页</a></li>
+                <li><a href="/about/about.html">关于我</a></li>
+
+                <li class="dropdown">
+                    <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">交流学习<span class="caret"></span></a>
+                    <ul class="dropdown-menu" id="study">
+                    </ul>
+                </li>
+                <li><a href="javascript:;" class="nothing">心灵鸡汤</a></li>
+                <li><a href="javascript:;" class="nothing">娱乐段子</a></li>
+                <li class="active"><a href="/ly/ly.html">留言</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown user-center hidden">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="/static/images/avatar/default.jpg" alt="">个人中心<span class="caret"></span></a>
+                    <ul class="dropdown-menu dropdown-menu-left">
+                        <li><a href="javascript:;">账号管理</a></li>
+                        <li id="logout"><a href="javascript:;">退出</a></li>
+                    </ul>
+                </li>
+                <li class="user login"><a href="/user/login.html" class="btn btn-primary">登录</a></li>
+                <li class="user register"><a href="/user/register.html" class="btn btn-danger">注册</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!--内容-->
+<section class="wwx_article">
+    <div class="container">
+        <div class="row" id="art_box">
+
+            <footer class="art_footer">
+                <div class="clearfix">
+                    <textarea class="comment_textarea form-control" rows="3"></textarea>
+                    <button class="btn btn-info pull-right" id="postComment">吐槽一下</button>
+                    <div class="alert alert-warning pull-right">评论内容为空</div>
+                </div>
+                <div class="comment_box">
+                    <h4>留言墙</h4>
+                    <ul id="comment">
+
+                    </ul>
+                    <div class="more">
+
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+</section>
+
+<!--版权-->
+<footer class="wwx_partner">
+    <ul>
+        <li><a href="">Copyright © 2019, wenwenxing All Rights Reserved.</a> </li>
+    </ul>
+</footer>
+<!--模态框-->
+<div class="modal fade" id="loginModal">
+    <div class="modal-dialog modal-sm" style="margin-top: 150px">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                <h4 class="modal-title">请先登录</h4>
+            </div>
+            <div class="modal-body" style="padding-bottom: 0">
+                <div class="alert alert-danger hidden">
+                </div>
+                <form id='form' autocomplete="off">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="请输入用户邮箱" name="user_email">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="请输入密码" name="password">
+                    </div>
+                </form>
+
+            </div>
+            <div class="modal-footer" style="border:none;padding-top: 0">
+                <button type="submit" class="btn btn-info" style="width: 100%;">确认登录</button>
+                <p  class="register password text-center" style="margin-top: 10px"><a href="/user/register.html" style="margin-right: 5px">前往注册</a><a href="javascript:;" style="margin-left: 5px"class="nothing">忘记密码</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="postMultiModal">
+    <div class="modal-dialog modal-sm" style="margin-top: 150px">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                <h4 class="modal-title">回复评论</h4>
+            </div>
+            <div class="modal-body" style="padding-bottom: 0">
+                <div class="alert alert-danger hidden" style="padding: 7px;margin: 0 0 10px 0">回复内容为空
+                </div>
+                <form autocomplete="off">
+                    <div class="form-group">
+                        <textarea name="content" class="form-control" style="resize:none;width:100%;height: 80px"></textarea>
+                    </div>
+                </form>
+
+            </div>
+            <div class="modal-footer" style="border:none;padding-top: 0;">
+                <button type="submit" class="btn btn-info" style="width: 100%;">发布</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--模板-->
+<script type="text/x-artTemplate" id="moreTemplate">
+    <%if(count > 5){%>
+    <button class="btn btn-info" data-page="1" id="getComment" data-art-id="0" data-count="<%=count%>">加载更多留言</button>
+    <%}%>
+</script>
+
+
+<script type="text/x-artTemplate" id="secondComentTemplate">
+    <% for(var i = 0; i < list.length; i++){ %>
+
+    <li class="multi_excerpt clearfix" data-multi-id="<%=list[i].com_multi_id%>">
+        <div class="multi_focus">
+            <a href="javascript:;" class="thumbnail nothing" target="_blank">
+                <img src="<%=list[i].user_img%>" ></a>
+        </div>
+        <header class="multi_header">
+            <h2>
+                <a href="javascript:;" class="nothing"><%=list[i].user_name%></a></h2>
+        </header>
+        <p class="multi_note"><%=list[i].parent_user_name?'回复@'+list[i].parent_user_name+':': ''%><%=list[i].com_multi_content%></p>
+        <p class="multi_interact">
+            <span class="muted postMulti" data-com-id="<%=list[i].com_id%>" data-user-id="<%=list[i].user_id%>" data-user-name="<%=list[i].user_name%>">回复</span>
+            <span class="muted">
+            <i class="glyphicon glyphicon-thumbs-up"></i></span>
+            <span class="muted">
+            <i class="glyphicon glyphicon-thumbs-down"></i></span>
+        </p>
+    </li>
+    <%}%>
+</script>
+
+<script type="text/x-artTemplate" id="firstComentTemplate">
+    <% for(var i = 0; i < comments.length; i++){%>
+    <li class="excerpt" data-com-id="<%=comments[i].com_id%>">
+        <div class="focus">
+            <a href="javascript:;" class="thumbnail nothing" target="_blank">
+                <img src="<%=comments[i].user_img%>" ></a>
+        </div>
+        <header class="header">
+            <h2>
+                <a href="javascript:;" class="nothing"><%=comments[i].user_name%></a></h2>
+        </header>
+        <p class="note"><%=comments[i].com_content%></p>
+        <p class="interact">
+            <span class="muted postMulti" data-com-id="<%=comments[i].com_id%>">回复</span>
+            <span class="muted">
+            <i class="glyphicon glyphicon-thumbs-up"></i></span>
+            <span class="muted">
+            <i class="glyphicon glyphicon-thumbs-down"></i></span>
+        </p>
+
+
+        <div class="multi_comment" data-com-id="<%=comments[i].com_id%>">
+
+            <ul>
+                <%if(comments[i].com_multi.count){%>
+                <% for(var j = 0; j < comments[i].com_multi.data.length; j++){ %>
+
+                <li class="multi_excerpt clearfix"  data-multi-id="<%=comments[i].com_multi.data[j].com_multi_id%>">
+                    <div class="multi_focus">
+                        <a href="javascript:;" class="thumbnail nothing" target="_blank">
+                            <img src="<%=comments[i].com_multi.data[j].user_img%>" ></a>
+                    </div>
+                    <header class="multi_header">
+                        <h2>
+                            <a href="javascript:;" class="nothing"><%=comments[i].com_multi.data[j].user_name%></a></h2>
+                    </header>
+                    <p class="multi_note"><%=comments[i].com_multi.data[j].parent_user_name?'回复@'+comments[i].com_multi.data[j].parent_user_name+':': ''%><%=comments[i].com_multi.data[j].com_multi_content%></p>
+                    <p class="multi_interact">
+                        <span class="muted postMulti" data-com-id="<%=comments[i].com_multi.data[j].com_id%>" data-user-id="<%=comments[i].com_multi.data[j].user_id%>" data-user-name="<%=comments[i].com_multi.data[j].user_name%>">回复</span>
+                        <span class="muted">
+                    <i class="glyphicon glyphicon-thumbs-up"></i></span>
+                        <span class="muted">
+                    <i class="glyphicon glyphicon-thumbs-down"></i></span>
+                    </p>
+                </li>
+                <%}%>
+                <%}%>
+            </ul>
+            <%if(comments[i].com_multi.count > 3){%>
+            <button class="btn btn-info btn-xs getMulti" data-com-id="<%=comments[i].com_id%>" data-page="1" data-count="<%=comments[i].com_multi.count%>">展开更多评论</button>
+            <%}%>
+        </div>
+
+    </li>
+    <%}%>
+</script>
+<script src="/static/lib/artTemplate/template-native.js"></script>
+<script src="/static/lib/jquery/jquery.min.js"></script>
+<script src="/static/lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="/static/lib/nprogress/nprogress.js"></script>
+<script src="/static/js/navbar.js"></script>
+<script src="/static/js/common.js"></script>
+<script src="/static/js/ly.js"></script>
+</body>
+</html>

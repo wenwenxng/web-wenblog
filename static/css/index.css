@@ -4,8 +4,11 @@
 /*轮播图*/
 .wwx_banner{
     overflow: hidden;
-    border-radius: 10px;
     margin-top: 10px;
+}
+.wwx_banner>div{
+    border-radius: 10px;
+    overflow: hidden;
 }
 .wwx_banner .pc_imgBox {
     display: block;
@@ -252,7 +255,7 @@
 .wwx_news {
     margin-top: 15px;
     background: #fff;
-    padding: 20px 0;
+    padding-top: 20px;
 }
 .wwx_news .wwx_news_title{
     padding-left: 20px;
@@ -283,6 +286,9 @@
 }
 .wwx_news header h2{
     font-size: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 .wwx_news header a{
     font-size: 16px;
@@ -297,28 +303,18 @@
 .wwx_news .note{
     font-size: 14px;
     color:#888;
+    height: 70px;
+    line-height: 23.333px;
+    overflow: hidden;
 }
 .wwx_news .muted{
     font-size: 12px;
     color:#aaa;
     margin-right: 20px;
 }
+@media (max-width: 768px){
+    .wwx_news .muted{
+        margin-right: 5px;
+    }
+}
 /*合作伙伴*/
-.wwx_partner{
-    padding: 10px 0;
-}
-.wwx_partner ul{
-    padding: 0;
-    list-style: none;
-    text-align: center;
-    margin: 0;
-}
-.wwx_partner ul li{
-    display: inline-block;
-}
-.wwx_partner ul li a{
-    font-size: 12px;
-    line-height: 17px;
-    padding: 0 15px;
-    display: block;
-}

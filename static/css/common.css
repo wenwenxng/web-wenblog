@@ -1,10 +1,15 @@
 /*======reset css======*/
+html{
+    min-height: 100%;
+    position: relative;
+}
+
 body {
     padding-top: 80px;
+    padding-bottom: 35px;
     font-size: 14px;
     font-family: "Microsoft YaHei", sans-serif;
     color: #333;
-    position: relative;
     background-color: #f5f5f5;
 }
 
@@ -17,7 +22,7 @@ a:hover {
     text-decoration: none;
     color: #333;
 }
-h1,h2,h3,h4,h5,h6,ul,ol{
+h1,h2,h3,h4,h5,h6,ul,ol,p{
     padding: 0;
     margin: 0;
 }
@@ -128,6 +133,14 @@ ul,ol{
 /*3.但是有一些没有用到的选择器 代码的冗余*/
 /*4.删除:降低代码量*/
 /*5.保留:利于维护,方便产品更新的时候不用再去修改代码*/
+.modal-open .wwx_nav{
+    padding-right: 17px;
+}
+@media (max-width: 991px){
+    .modal-open .wwx_nav{
+        padding-right: 0;
+    }
+}
 .wwx_nav {
     margin-bottom: 0;
     border: none;
@@ -135,7 +148,7 @@ ul,ol{
     border-bottom: 1px solid #ccc;
     width: 100%;
     border-radius: 0;
-    z-index: 99999;
+    z-index: 30;
     position: absolute;
     /*不知道为什么不设置这个会有回不去的问题*/
     top:-1px;
@@ -205,13 +218,21 @@ ul,ol{
         font-size: 12px;
     }
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .wwx_nav .navbar-nav > li > a {
         color: #777;
         height: 50px;
         line-height: 20px;
     }
 }
+.wwx_nav .navbar-nav > li.user-center > a >img{
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
 .wwx_nav .navbar-nav > li > a:hover,
 .wwx_nav .navbar-nav > li > a:focus {
     color: #777;
@@ -308,4 +329,21 @@ fieldset[disabled] .wwx_nav .btn-link:hover,
 fieldset[disabled] .wwx_nav .btn-link:focus {
     color: #ccc;
 }
-
+.wwx_partner{
+    margin-top: 15px;
+    position: absolute;
+    z-index: 1;
+    clear: both;
+    width: 100%;
+    text-shadow: 0 -1px 0 #333;
+    overflow: hidden;
+    white-space: nowrap;
+    left: 0;
+    bottom: 0;
+    border-top:1px solid #ccc;
+    background: #fff;
+    text-align: center;
+}
+.wwx_partner a{
+    color:#999;
+}

@@ -5,17 +5,17 @@ $(function () {
     /*轮播图*/
     banner();
     navBars();
-    iniMobileTab();
-    /*初始化金,粤提示*/
-    $('[data-toggle="tooltip"]').tooltip();
+    news();
     //解决
     //注册防止fix引起window滑动事件
     $('.wwx_nav').on('touchmove', function(event) {
         event.preventDefault();
     });
+    //滚动把下来菜单收起
     $(window).on('scroll',function(){
         $('.wwx_nav .navbar-collapse').removeClass('in');
     })
+
 });
 var banner = function(){
     /*1.获取轮播图数据   ajax*/
@@ -64,20 +64,6 @@ var banner = function(){
            $('.carousel-inner').html(imageHtml);
        });
 
-       if (deviceWidth < 992){
-           $('#logo').attr('src','/static/images/smallLogo.png')
-       }else{
-           //上线后删除,解决logo在resize的问题
-           $('#logo').attr('src','/static/images/bigLogo.png')
-       }
-
-       if (deviceWidth < 768) {
-           $('.navbar-right .user a').attr('class','')
-       }else{
-           //上线后删除,解决样式在resize的问题
-           $('.navbar-right .login a').attr('class','btn btn-default btn-primary')
-           $('.navbar-right .register a').attr('class','btn btn-default btn-danger')
-       }
    };
     // render();
     /*3.测试功能,上线后删除*/
@@ -132,16 +118,12 @@ var navBars = function(){
                 }
             });
     };
-    var getArtByType = function(callback){
+    var getArtByType = function(params,callback){
         $.ajax({
             type:'get',
             url:'/api/article/queryArticle.php',
             dataType:'json',/*强制转成json对象,不成功则报错,不会执行success,执行error回调*/
-            data:{
-                art_view:1,
-                page:1,
-                pageSize:6
-            },
+            data:params,
             success:function(data) {
                 callback && callback(data);
             }
@@ -149,16 +131,32 @@ var navBars = function(){
     };
     var render = function(){
         getTypeData(function(data){
-            console.log(data)
             var navBarsHtml = template('navTabsTemplate',{list:data});
-            $('.wwx_product .nav-tabs').html(navBarsHtml);
-
+            $('.wwx_product .nav-tabs').append(navBarsHtml);
+            var productContentBoxList = template('productContentBoxTemplate',{list:data});
+            $('#product_content_box').append(productContentBoxList);
+            //动态生成navBar后再进行isscroll初始化
+            iniMobileTab();
         })
-        getArtByType(function(data){
-            console.log(data)
+        var params = {page:1,pageSize:6,art_view:1}
+        if ($(window).width()<768){params.pageSize = 4;}
+        getArtByType(params,function(data){
+            var navBarContent = template('navTabContentTemplate',{list:data.data})
+            $('#product_nav01').html(navBarContent);
         })
     };
     render()
+    //为navBar注册点击事件
+    $('.wwx_product .nav-tabs').on('click','a',function(){
+        var art_type_id = $(this).data('type-id')
+        var ContentBox =  $(this).attr('href')
+        var params = {page:1,pageSize:6,art_view:1,art_type_id}
+        if ($(window).width()<768){params.pageSize = 4;}
+        getArtByType(params,function(data){
+            var navBarContent = template('navTabContentTemplate',{list:data.data})
+            $(ContentBox).html(navBarContent);
+        })
+    })
 
 }
 var iniMobileTab = function(){
@@ -168,7 +166,6 @@ var iniMobileTab = function(){
     $navTabs.find('li').each(function(i,item){
         width += $(this).outerWidth(true);
     });
-    console.log(width);
     $navTabs.width(width);
     /*2.修改结构,使之满足区域滑动*/
     //加了一个父容器给 .nav-tabs
@@ -179,3 +176,23 @@ var iniMobileTab = function(){
         click:true
     });
 };
+var news = function(){
+    var getArtByCre = function(callback){
+        $.ajax({
+            type:'get',
+            url:'/api/article/queryArticle.php',
+            dataType:'json',/*强制转成json对象,不成功则报错,不会执行success,执行error回调*/
+            data:{
+                page:1,
+                pageSize:5
+            },
+            success:function(data) {
+                callback && callback(data);
+            }
+        });
+    };
+    getArtByCre(function(data){
+        var newsHtml = template('newsTemplate',{list:data.data})
+        $('.wwx_news').append(newsHtml)
+    })
+}

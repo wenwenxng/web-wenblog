@@ -1,0 +1,170 @@
+html{
+    position: relative;
+    min-height: 100%;
+}
+body{
+    padding-bottom: 69px;
+}
+input::-webkit-input-placeholder{
+    color:#ccc;
+}
+ul,ol{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.wwx_register{
+    margin-top: 130px;
+    margin-bottom: 60px;
+}
+@media (max-width: 768px){
+    .wwx_register{
+        margin-top: 60px;
+    }
+}
+.wwx_register  .content{
+    box-shadow: 0 0 5px #ccc;
+    background: #fff;
+    border-radius: 15px;
+    max-width: 800px;
+    margin: 0 auto ;
+}
+@media (max-width: 992px){
+    .wwx_register  .content{
+        max-width: 390px;
+    }
+}
+.wwx_register .wwx_top{
+    height: 160px;
+    background: #bbdefb;
+    border-radius: 15px 15px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.wwx_register .wwx_top .logo img{
+    width: 130px;
+    border-radius: 50%;
+    margin: 1em 0;
+}
+.wwx_register .wwx_top a{
+    display: block;
+    font-size: 16px;
+    color: #fff;
+    background: #e92322;
+    padding: 3px 1.5em 2px;
+    border-radius: 0 10px 0 0;
+    box-shadow: 0 0 5px 0 #969696;
+    position: relative;
+}
+.wwx_register .wwx_top a:nth-of-type(2){
+    border-radius: 10px 0 0 0;
+}
+.wwx_register .wwx_main{
+
+}
+.wwx_register .wwx_main form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.wwx_register .wwx_main .main_row{
+    width: 50%;
+    margin-top: 46px;
+    padding: 0 20px;
+    text-align: center;
+}
+.wwx_register .wwx_main .main_row input{
+    width: 100%;
+    height: 40px;
+    border-radius: 20px;
+    outline: none;
+    transition: all 0.3s ease;
+    border: 1px solid #ddd;
+}
+@media (max-width: 992px) {
+    .wwx_register .wwx_main form{
+        display: block;
+    }
+    .wwx_register .wwx_main .main_row{
+        width: 100%;
+        padding: 0;
+    }
+    .wwx_register .wwx_main .main_row input{
+        width: 66%;
+    }
+}
+.wwx_register .wwx_main .input_text input{
+    padding-left: 10px;
+}
+.wwx_register .wwx_main .input_text input:focus
+{
+    border-radius: 5px;
+    border: 1px solid #bbdefb;
+}
+.wwx_register .wwx_main .main_row.vcode>div{
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (max-width: 992px) {
+    .wwx_register .wwx_main .main_row.vcode>div{
+        width: 66%;
+    }
+}
+.wwx_register .wwx_main .main_row.vcode img {
+    display: block;
+    margin-top: 2.5px;
+    height: 35px;
+    width: 80px;
+    margin-right: 5px;
+}
+.wwx_register .wwx_main .main_row.vcode .form-group{
+    width: 100%;
+}
+.wwx_register .wwx_main .main_row.vcode .form-group input{
+    width: 100%;
+}
+.wwx_main .main_row>input.btn-primary:hover{
+    border-radius: 5px;
+}
+
+.wwx_register .wwx_foot{
+    margin-top: 60px;
+    background: #7ea8bd;
+    border-radius: 50% 50% 15px 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.wwx_register .wwx_foot p{
+    color: #fff;
+    font-size: 13px;
+    padding: 0 50px;
+    text-align: center;
+    position: relative;
+    top: 7px;
+    margin: 6px 0 12px;
+}
+.wwx_register .wwx_foot p button{
+    border-radius: 5px;
+    height: 15px;
+    background: #bbdefb;
+}
+.wwx_partner{
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-top:1px solid #ccc;
+    background: #fff;
+    text-align: center;
+}
+.wwx_partner a{
+    color:#999;
+}

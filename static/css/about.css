@@ -1,0 +1,29 @@
+.wwx_main{
+    margin-top: 15px;
+}
+.wwx_main .container{
+    background: #fff;
+    min-height: 500px;
+    border-radius: 15px;
+}
+.wwx_main .title_box{
+    padding: 20px;
+    border-bottom: 1px solid #ccc;
+}
+.wwx_main .title_box .title{
+    font-size: 20px;
+}
+.wwx_main .content{
+    padding: 25px;
+}
+.wwx_main .content .myphoto{
+    display: block;
+    float:left;
+    overflow: hidden;
+    margin-right: 20px;
+}
+.wwx_main .content .text{
+    margin-top: 15px;
+    font-size: 18px;
+    color:#888;
+}

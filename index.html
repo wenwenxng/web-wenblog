@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+    <link rel="shortcut icon" type="image/ico" href="/favicon.ico"/>
+    <meta name="shot">
+    <title>温星博客</title>
+    <link href="/static/lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="/static/lib/html5shiv/html5shiv.min.js"></script>
+    <script src="/static/lib/respond/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="/static/lib/nprogress/nprogress.css">
+    <link rel="stylesheet" href="/static/css/index.css">
+    <link rel="stylesheet" href="/static/css/common.css">
+</head>
+<body id="bd">
+<!--导航栏-->
+<nav class="navbar wwx_nav" data-spy="affix" data-offset-top="201">
+    <!--导航的内容容器-->
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">
+                <img src="/static/images/bigLogo.png" alt="" id="logo">
+            </a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="/">主页</a></li>
+                <li><a href="/about/about.html">关于我</a></li>
+
+                <li class="dropdown">
+                    <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">交流学习<span class="caret"></span></a>
+                    <ul class="dropdown-menu" id="study">
+                    </ul>
+                </li>
+                <li><a href="javascript:;" class="nothing">心灵鸡汤</a></li>
+                <li><a href="javascript:;"  class="nothing">娱乐段子</a></li>
+                <li><a href="/ly/ly.html">留言</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown user-center hidden">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="/static/images/avatar/default.jpg" alt="">个人中心<span class="caret"></span></a>
+                    <ul class="dropdown-menu dropdown-menu-left">
+                        <li><a href="javascript:;">账号管理</a></li>
+                        <li id="logout"><a href="javascript:;">退出</a></li>
+                    </ul>
+                </li>
+                <li class="user login"><a href="/user/login.html" class="btn btn-primary">登录</a></li>
+                <li class="user register"><a href="/user/register.html" class="btn btn-danger">注册</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!--轮播图-->
+<section class="wwx_banner container">
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="3000">
+        <!--点盒子-->
+        <ol class="carousel-indicators">
+
+        </ol>
+        <div class="carousel-inner">
+
+        </div>
+
+        <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+    </div>
+
+</section>
+<section class="wwx_main container">
+    <div class="main_right hidden-sm hidden-xs">
+        <!--热门搜索-->
+        <aside class="widget hot">
+            <h4 class="widget_tit">热门标签</h4>
+            <div class="widget_list">
+                <ul class="clearfix">
+                    <li><a href="javascript:;" class="nothing">ajax</a></li>
+                    <li><a href="javascript:;" class="nothing">h5c3</a></li>
+                    <li><a href="javascript:;" class="nothing">桥梁</a></li>
+                    <li><a href="javascript:;" class="nothing">城市轨道交通工程</a></li>
+                    <li><a href="javascript:;" class="nothing">垃圾填埋场</a></li>
+                    <li><a href="javascript:;" class="nothing">城市道路</a></li>
+                    <li><a href="javascript:;" class="nothing">城镇管道</a></li>
+                    <li><a href="javascript:;" class="nothing">工程招投标</a></li>
+                    <li><a href="javascript:;" class="nothing">工程劳动合同法</a></li>
+                </ul>
+            </div>
+        </aside>
+        <!--随便外链-->
+        <aside class="widget out_link">
+            <h4 class="widget_tit">外部链接</h4>
+            <div class="out_link_list">
+                <ul class="clearfix">
+                    <li><a href="https://www.baidu.com/">百度</a></li>
+                    <li><a href="https://weibo.com/">新浪微博</a></li>
+                    <li><a href="https://music.163.com/">网易云</a></li>
+                    <li><a href="https://www.taobao.com/">淘宝</a></li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+    <div class="main_left">
+        <!--产品-->
+        <section class="wwx_product clearfix">
+                <div class="nav-tabs-parent">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#product_nav01" data-toggle="tab">特别推荐</a></li>
+                    </ul>
+                </div>
+                <!-- 内容 -->
+                <div class="tab-content" id="product_content_box">
+                    <div class="tab-pane active" id="product_nav01">01</div>
+                </div>
+
+        </section>
+        <!--最新发布-->
+        <section class="wwx_news clearfix">
+            <h4 class="wwx_news_title">最新发布</h4>
+
+        </section>
+    </div>
+</section>
+<!--版权-->
+<footer class="wwx_partner">
+    <ul>
+        <li><a href="">Copyright © 2019, wenwenxing All Rights Reserved.</a> </li>
+    </ul>
+</footer>
+<!--模板-->
+<!--轮播图-->
+<script type="text/x-artTemplate" id="pointTemplate">
+    <% for (var i=0; i < list.length; i++){%>
+    <li data-target="#carousel-example-generic" data-slide-to="<%=i%>" class="<%=i==0?'active':'' %>"></li>
+    <% } %>
+</script>
+<script type="text/x-artTemplate" id="imageTemplate">
+    <% for (var i=0; i < list.length; i++){%>
+    <div class="item <%=i==0?'active':'' %>">
+        <%if(isMobile){%>
+        <a href="javascript:;" class="m_imgBox"><img src="<%=list[i].banner.mUrl%>" alt=""></a>
+        <% }else{ %>
+        <a class="pc_imgBox" href="javascript:;" style="background-image: url(<%=list[i].banner.pcUrl%>)"></a>
+        <% } %>
+    </div>
+    <% } %>
+
+</script>
+<!--navbar-->
+<script type="text/x-artTemplate" id="navTabsTemplate">
+
+    <% for (var i=0; i < list.length; i++){%>
+    <li><a href="#product_nav<%=(i+2)<10?'0'+(i+2):(i+2)%>" data-toggle="tab" data-type-id="<%=list[i].type_id%>"><%=list[i].type_name%></a></li>
+    <%}%>
+</script>
+<script type="text/x-artTemplate" id="productContentBoxTemplate">
+
+    <% for (var i=0; i < list.length; i++){%>
+    <div class="tab-pane" id="product_nav<%=(i+2)<10?'0'+(i+2):(i+2)%>">loading...</div>
+    <%}%>
+</script>
+<script type="text/x-artTemplate" id="navTabContentTemplate">
+    <% for (var i=0; i < list.length; i++){%>
+    <div class="col-xs-12 col-sm-6">
+        <a href="/article/detail.html?art_id=<%=list[i].art_id%>" class="product_box active" target="_blank">
+            <div class="pro_left">
+                <img src="/static/images/smalllogo.png" alt="">
+            </div>
+            <div class="pro_right">
+                <h4><%=list[i].art_title%></h4>
+                <p><%=list[i].art_content%></p>
+            </div>
+
+        </a>
+    </div>
+    <%}%>
+</script>
+<!--news-->
+<script type="text/x-artTemplate" id="newsTemplate">
+
+    <% for (var i=0; i < list.length; i++){%>
+    <div>
+        <ul>
+            <li class="excerpt">
+                <div class="focus">
+                    <a href="/article/detail.html?art_id=<%=list[i].art_id%>" class="thumbnail" target="_blank">
+                        <img src="/static/images/smalllogo.png" ></a>
+                </div>
+                <header>
+                    <h2>
+                        <a href="/article/detail.html?art_id=<%=list[i].art_id%>" title="<%=list[i].art_title%>" target="_blank"><%=list[i].art_title%></a></h2>
+                </header>
+                <p class="note"><%=list[i].art_content%></p>
+                <p style="margin-top:0;">
+              <span class="muted">
+                <i class="glyphicon glyphicon-user"></i> <%=list[i].user_name%> </span>
+                    <span class="muted hidden-xs">
+                <i class="glyphicon glyphicon-time"></i> <%=list[i].art_cre_time.substr(0,10)%></span>
+                    <span class="muted">
+                <i class="glyphicon glyphicon-eye-open"></i>  <%=list[i].art_view%>次浏览</span>
+                </p>
+            </li>
+        </ul>
+    </div>
+    <%}%>
+</script>
+
+<script src="/static/lib/artTemplate/template-native.js"></script>
+<script src="/static/lib/jquery/jquery.min.js"></script>
+<script src="/static/lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="/static/lib/iscroll/iscroll.js"></script>
+<script src="/static/lib/nprogress/nprogress.js"></script>
+<script src="/static/js/common.js"></script>
+<script src="/static/js/navbar.js"></script>
+<script src="/static/js/index.js"></script>
+</body>
+</html>
