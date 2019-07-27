@@ -16,6 +16,9 @@
 .wwx_main .content{
     padding: 25px;
 }
+.wwx_main .content img{
+    width: 100%;
+}
 .wwx_main .content .myphoto{
     display: block;
     float:left;
